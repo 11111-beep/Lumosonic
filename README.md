@@ -23,11 +23,11 @@
 
 
 
-*我们建议您在此处替换为自己的应用截图。*
 
-| 主界面                                                        | 播放界面                                                     | 听歌识曲                                                     |
+
+| 主界面                                                        | 播放界面                                                     | 用户界面                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="https://raw.githubusercontent.com/11111-beep/LumoSonic/main/app/src/main/res/drawable/2.jpg" width="250"> |  <img src="https://raw.githubusercontent.com/11111-beep/LumoSonic/main/app/src/main/res/drawable/4.jpg" width="250"> |  <img src="https://raw.githubusercontent.com/11111-beep/LumoSonic/main/app/src/main/res/drawable/1.jpg" width="250"> |
+| <img src="https://raw.githubusercontent.com/11111-beep/LumoSonic/main/app/src/main/res/drawable/2.jpg" width="250"> |  <img src="https://raw.githubusercontent.com/11111-beep/LumoSonic/main/app/src/main/res/drawable/4.jpg" width="250"> |  <img src="https://raw.githubusercontent.com/11111-beep/LumoSonic/main/app/src/main/res/drawable/3.jpg" width="250"> |
 
 ------
 
