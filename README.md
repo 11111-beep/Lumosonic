@@ -160,7 +160,7 @@ LumoSonic将其两者结合,使不同平台和本地歌曲自由播放的问题�
 
 
 
-我们非常欢迎任何形式的贡献！无论是提交 Issue 来报告错误、修复 Bug 还是实现 Roadmap 中的新功能。
+我们非常欢迎任何形式的贡献！无论是提交 Issue 来报告错误、修复 Bug 还是实现 LumoSonic 中的新功能。
 
 1. Fork 本仓库。
 2. 创建您的特性分支 (`git checkout -b feature/AmazingFeature`)。
