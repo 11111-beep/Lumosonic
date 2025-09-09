@@ -1,5 +1,8 @@
+
+
 # LumoSonic 音乐 App
 
+<img src="https://github.com/11111-beep/Lumosonic/raw/refs/heads/main/image/playstore-icon.png" width="400">
 
 
 **LumoSonic** 是一款专注于 **极致稳定性** 与 **纯粹用户体验** 的现代化安卓音乐App。
@@ -10,7 +13,7 @@
 >
 > 
 >
-> 本应用仅供个人学习与技术交流使用，**所有内容严禁用于任何形式的商业用途、二次分发或转售**。所有在线音乐内容版权归原平台所有，请大家支持正版音乐！
+> 本应用仅供个人学习与技术交流使用，**所有内容严禁用于任何形式的商业用途、二次分发或转售**，否则后果自负，请大家支持正版音乐！
 
 ------
 
@@ -91,6 +94,10 @@ LumoSonic 的核心是其 **双进程架构**，通过 `AIDL` 实现跨进程通
 - **服务进程 (`:service`)**:
   - 独立运行 `MusicService`，专注于音频解码、播放控制和后台任务。
   - **优势**: 进程独立，拥有更高的系统存活优先级，最大限度地保证了后台播放的**可靠性**。
+
+为了更直观地展示 LumoSonic 的内部工作流程，以下是应用的框架思维图：
+
+<img src="https://github.com/11111-beep/Lumosonic/raw/refs/heads/main/image/L.svg" width="1000">
 
 ------
 
@@ -181,7 +188,7 @@ LumoSonic 的核心是其 **双进程架构**，通过 `AIDL` 实现跨进程通
 
 - 感谢 [Google](https://developer.android.com/) 提供了强大的 Android 开发工具和 `ExoPlayer` 等优秀组件。
 - 感谢 [ACRCloud](https://www.acrcloud.com/) 提供了强大的听歌识曲服务。
-- 感谢所有为本项目贡献过代码和想法的开发者。
+- 感谢所有为本项目贡献过代码和想法的AI。
 
 ------
 
