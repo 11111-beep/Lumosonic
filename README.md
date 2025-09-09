@@ -24,7 +24,7 @@
 
 | 主界面                                                        | 播放界面                                                     | 听歌识曲                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="[https://i.imgur.com/your-image-1.png](https://www.google.com/search?q=https://i.imgur.com/your-image-1.png)" width="250"> | <img src="[https://i.imgur.com/your-image-2.png](https://www.google.com/search?q=https://i.imgur.com/your-image-2.png)" width="250"> | <img src="[https://i.imgur.com/your-image-3.png](https://www.google.com/search?q=https://i.imgur.com/your-image-3.png)" width="250"> |
+| <img src="https://raw.githubusercontent.com/11111-beep/LumoSonic/main/app/src/main/res/drawable/2.jpg" width="250"> |  <img src="https://raw.githubusercontent.com/11111-beep/LumoSonic/main/app/src/main/res/drawable/4.jpg" width="250"> |  <img src="https://raw.githubusercontent.com/11111-beep/LumoSonic/main/app/src/main/res/drawable/1.jpg" width="250"> |
 
 ------
 
