@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Lumosonic" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#CCCCCC</item>
+        <item name="colorPrimaryVariant">#AB8BF4</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#999999</item>
+        <item name="colorSecondaryVariant">#6CDCB9</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!-- 状态栏颜色 -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!-- 使状态栏图标变为深色 -->
+        <item name="android:windowLightStatusBar" tools:targetApi="M">true</item>
+
+        <!-- 导航栏颜色 -->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <!-- 让应用内容可以延伸到系统栏后面 (Edge-to-edge) -->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+</resources>

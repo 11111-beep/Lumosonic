@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/xnt_color"
+    android:fitsSystemWindows="true"
+    >
+
+    <!-- 1. 顶部标题栏 -->
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 2. 专辑封面 -->
+    <!-- 使用 NeumorphCardView 实现圆形凹陷效果 -->
+    <soup.neumorphism.NeumorphCardView
+        android:id="@+id/card_album_art"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/title_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:neumorph_shadowElevation="3dp">
+
+        <!-- ImageView 用于显示封面图片, 使用 cardCornerRadius 使其也变为圆形 -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_album_art"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_album_placeholder"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+            android:elevation="10dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/album_art_stroke_color"
+            />
+
+    </soup.neumorphism.NeumorphCardView>
+
+    <!-- 3. 歌曲信息 -->
+    <!-- 使用 NeumorphCardView 实现内嵌效果 -->
+    <soup.neumorphism.NeumorphCardView
+        android:id="@+id/card_song_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintTop_toBottomOf="@id/card_album_art"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:neumorph_shapeType="pressed"
+        app:neumorph_shadowElevation="3dp">
+
+        <soup.neumorphism.NeumorphTextView
+            android:id="@+id/text_song_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="12dp"
+            android:minWidth="1dp"
+            android:text="Highway to Hell"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#7E7E7E"
+            app:neumorph_shadowElevation="2dp"/>
+
+        <soup.neumorphism.NeumorphTextView
+            android:id="@+id/text_artist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="12dp"
+            android:minWidth="1dp"
+            android:text="ACDC"
+            android:textSize="14sp"
+            android:textColor="#ABABAB"
+            app:neumorph_shadowElevation="1dp"/>
+    </soup.neumorphism.NeumorphCardView>
+
+    <TextView
+        android:id="@+id/tvCurrentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="01:23"
+        android:textColor="#ABABAB"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/seekbar_song_progress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/seekbar_song_progress" />
+
+    <TextView
+        android:id="@+id/tvTotalTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:text="04:56"
+        android:textColor="#ABABAB"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/seekbar_song_progress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/seekbar_song_progress" />
+
+    <SeekBar
+        android:id="@+id/seekbar_song_progress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvTotalTime"
+        app:layout_constraintStart_toEndOf="@+id/tvCurrentTime"
+        app:layout_constraintTop_toBottomOf="@id/card_song_info"
+        />
+
+    <!-- 4. 播放控制按钮 -->
+    <LinearLayout
+        android:id="@+id/layout_playback_controls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/seekbar_song_progress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:neumorph_shadowElevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <soup.neumorphism.NeumorphImageButton
+            android:id="@+id/button_previous"
+            style="@style/Widget.Neumorph.ImageButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_skip_previous"
+            android:contentDescription="上一曲"
+            app:neumorph_shadowElevation="2dp"
+            />
+
+        <soup.neumorphism.NeumorphImageButton
+            android:id="@+id/button_play_pause"
+            style="@style/Widget.Neumorph.ImageButton"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/ic_pause"
+            android:contentDescription="播放/暂停"
+            app:neumorph_shadowElevation="2dp"/>
+
+        <soup.neumorphism.NeumorphImageButton
+            android:id="@+id/button_next"
+            style="@style/Widget.Neumorph.ImageButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_skip_next"
+            app:neumorph_shadowElevation="2dp"
+            android:contentDescription="下一曲"
+            />
+
+    </LinearLayout>
+
+    <!-- 6. 底部功能栏 -->
+    <soup.neumorphism.NeumorphCardView
+        android:id="@+id/bottom_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:neumorph_shadowElevation="3dp"
+        app:neumorph_shapeType="flat"
+        app:neumorph_cornerFamily="rounded"
+        app:neumorph_cornerSizeTopLeft="20dp"
+        app:neumorph_cornerSizeTopRight="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:gravity="center_vertical">
+
+            <soup.neumorphism.NeumorphImageButton
+                android:id="@+id/button_favorite"
+                style="@style/Widget.Neumorph.ImageButton"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:src="@drawable/ic_notfavorite"
+                android:contentDescription="收藏"
+                app:neumorph_shadowElevation="2dp"
+                />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <soup.neumorphism.NeumorphImageButton
+                android:id="@+id/button_playlist"
+                style="@style/Widget.Neumorph.ImageButton"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:src="@drawable/ic_playlist"
+                android:contentDescription="添加到播放列表"
+                app:neumorph_shadowElevation="2dp"
+                />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <soup.neumorphism.NeumorphImageButton
+                android:id="@+id/button_shuffle"
+                style="@style/Widget.Neumorph.ImageButton"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:src="@drawable/ic_shuffle"
+                android:contentDescription="随机播放"
+                app:neumorph_shadowElevation="2dp"
+                />
+        </LinearLayout>
+    </soup.neumorphism.NeumorphCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

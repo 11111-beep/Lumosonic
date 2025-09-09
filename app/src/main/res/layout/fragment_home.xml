@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/xnt_color"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.home.HomeFragment">
+
+    <soup.neumorphism.NeumorphTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Hi,Lumosonic!"
+        android:textColor="@color/xnt_color"
+        android:textSize="40sp"
+        android:textStyle="bold|italic"
+        android:layout_marginTop="30dp"
+        app:neumorph_shadowElevation="2dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="10dp">
+
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:neumorph_shapeType="pressed"
+            app:neumorph_shadowElevation="2dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/searchEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@id/searchButton"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:hint="搜索..."
+                    android:padding="16dp"
+                    android:textColorHint="#888888"
+                    android:textColor="#333333"
+                    android:inputType="text"
+                    android:maxLines="1"/>
+
+                <soup.neumorphism.NeumorphImageButton
+                    android:id="@+id/searchButton"
+                    android:layout_width="58dp"
+                    android:layout_height="55dp"
+                    style="@style/Widget.Neumorph.ImageButton"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/ic_search"
+                    app:neumorph_shadowElevation="2dp"
+                    app:neumorph_shapeType="flat"
+                    android:contentDescription="搜索"/>
+
+            </RelativeLayout>
+        </soup.neumorphism.NeumorphCardView>
+    </LinearLayout>
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="290dp"
+        android:layout_height="240dp"
+        app:neumorph_shapeType="basin"
+        android:layout_gravity="center"
+        app:neumorph_strokeColor="@color/xnt_color"
+        app:neumorph_strokeWidth="8dp" >
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieAnimationView"
+            android:layout_width="200dp"
+            android:layout_height="230dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_centerInParent="true"
+            android:contentDescription="动画"
+            app:lottie_rawRes="@raw/wonders"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true" />
+
+    </soup.neumorphism.NeumorphCardView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp"
+        android:orientation="horizontal">
+
+        <soup.neumorphism.NeumorphButton
+            android:id="@+id/btn1"
+            android:layout_width="120dp"
+            android:layout_height="110dp"
+            android:gravity="center"
+            android:text="Music"
+            android:textColor="#999999"
+            android:drawableTop="@drawable/ic_music"
+            android:paddingTop="26dp"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            style="@style/Widget.Neumorph.Button"
+            app:neumorph_shadowElevation="1dp"/>
+
+
+        <soup.neumorphism.NeumorphButton
+            android:id="@+id/btn2"
+            android:layout_width="120dp"
+            android:layout_height="110dp"
+            android:gravity="center"
+            android:text="List"
+            android:textColor="#999999"
+            android:drawableTop="@drawable/ic_list"
+            android:paddingTop="26dp"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            style="@style/Widget.Neumorph.Button"
+            app:neumorph_shadowElevation="1dp"/>
+
+
+        <soup.neumorphism.NeumorphButton
+            android:id="@+id/btn3"
+            android:layout_width="120dp"
+            android:layout_height="110dp"
+            android:gravity="center"
+            android:text="Recent"
+            android:drawableTop="@drawable/ic_recent"
+            android:paddingTop="26dp"
+            android:textColor="#999999"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            style="@style/Widget.Neumorph.Button"
+            app:neumorph_shadowElevation="1dp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginBottom="60dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_album"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_album_placeholder"
+            android:scaleType="centerCrop"
+            android:elevation="10dp"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/album_art_stroke_color"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/left_wave"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            app:lottie_rawRes="@raw/line"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="false"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/image_album"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/image_album"
+            app:layout_constraintBottom_toBottomOf="@+id/image_album"
+            />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/right_wave"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:scaleX="-1"
+            app:lottie_rawRes="@raw/line"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="false"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/image_album"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/image_album"
+            app:layout_constraintBottom_toBottomOf="@+id/image_album"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
+

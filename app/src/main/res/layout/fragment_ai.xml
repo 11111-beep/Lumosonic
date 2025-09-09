@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/xnt_color"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.ai.AiFragment">
+
+    <soup.neumorphism.NeumorphTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="听歌识曲"
+        android:textColor="@color/xnt_color"
+        android:textSize="38sp"
+        android:textStyle="bold|italic"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        app:neumorph_shadowElevation="2dp"/>
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="330dp"
+        android:layout_height="330dp"
+        android:layout_gravity="center_horizontal"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/listening_music"
+        app:lottie_speed="1" />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_search"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        app:lottie_autoPlay="false"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/search_music"
+        app:lottie_speed="1" />
+</LinearLayout>
